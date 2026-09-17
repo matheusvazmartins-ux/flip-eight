@@ -172,7 +172,6 @@ header nav ul li:hover {
 .categorias-produtos li {
     display: flex;
     flex-direction: column;
-    flex-shrink: 0;
     align-items: center;
     gap: 8px;
     font-family: 'Bebas Neue', sans-serif;
@@ -375,6 +374,10 @@ footer {
 
     .categorias-produtos ul::-webkit-scrollbar {
         display: none;
+    }
+
+    .categorias-produtos li {
+        flex-shrink: 0;
     }
 
     .hero {
