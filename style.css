@@ -165,7 +165,7 @@ header nav ul li:hover {
 .categorias-produtos ul {
     display: flex;
     justify-content: center;
-    gap: 70px;
+    gap: 50px;
     list-style: none;
 }
 
