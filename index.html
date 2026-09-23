@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <title>Larissa Vet.</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+  
+  <header>
+    <!-- Logo e Nav agora estão juntos no mesmo container -->
+    <div class="container header-flex">
+      <div class="logo">Flip Eight</div>
+      <nav>
+        <ul>
+          <li>Início</li>
+          <li>Serviços</li>
+          <li>Cadastro</li>
+          <li>Sobre</li>
+          <li>Contatos</li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="vitrine">
+ 
+  <article class="produto">
+<h3>Nome do produto 1</h3>
+<p>Uma frase sobre ele.</p>
+<p class="preco">R$ 00,00</p>
+<button type="button">Comprar</button>
+</article>
+ 
+  <article class="produto">
+<h3>Nome do produto 2</h3>
+<p>Uma frase sobre ele.</p>
+<p class="preco">R$ 00,00</p>
+<button type="button">Comprar</button>
+</article>
+ 
+  <article class="produto">
+<h3>Nome do produto 3</h3>
+<p>Uma frase sobre ele.</p>
+<p class="preco">R$ 00,00</p>
+<button type="button">Comprar</button>
+</article>
+ 
+</section>
+    
+      <h2>Agende sua consulta</h2>
+      <form action="" method="post" class="formulario">
+        
+        <div class="grupo-campo">
+          <label for="nome">Nome completo:</label>
+          <input type="text" id="nome" name="nome" required minlength="3">
+        </div>
+
+        <div class="grupo-campo">
+          <label for="nomeanimal">Nome do animal:</label>
+          <input type="text" id="nomeanimal" name="nomeanimal" required minlength="3">
+        </div>
+
+        <!-- Grupo de opções (Radio) -->
+        <div class="grupo-radio">
+          <label for="cachorro">
+            <input type="radio" id="cachorro" name="tipo-animal" value="cachorro" required>
+            Cachorro
+          </label>
+
+          <label for="gato">
+            <input type="radio" id="gato" name="tipo-animal" value="gato" required>
+            Gato
+          </label>
+        </div>
+
+        <div class="grupo-campo">
+          <label for="raca">Raça do animal:</label>
+          <input type="text" id="raca" name="raca" required minlength="3">
+        </div>
+
+        <div class="grupo-campo">
+          <label for="email">E-mail:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="grupo-campo">
+          <label for="telefone">Telefone/WhatsApp:</label>
+          <input type="tel" id="telefone" name="telefone" pattern="[0-9]{2} 9[0-9]{4}-[0-9]{4}" placeholder="21 99999-9999">
+        </div>
+
+        <div class="grupo-campo">
+          <label for="assunto">Assunto:</label>
+          <select id="assunto" name="assunto">
+            <option value="duvida">Dúvida sobre um produto</option>
+            <option value="pedido">Acompanhar um pedido</option>
+            <option value="parceria">Parceria</option>
+          </select>
+        </div>
+
+        <div class="grupo-campo">
+          <label for="mensagem">Mensagem</label>
+          <textarea id="mensagem" name="mensagem" rows="4" placeholder="Escreva aqui..."></textarea>
+        </div>
+          
+        <div class="grupo-checkbox">
+          <label for="aceite">
+            <input type="checkbox" id="aceite" name="aceite" value="sim" required>
+            Aceito receber novidades da loja
+          </label>
+        </div>
+
+        <button type="submit">Enviar cadastro</button>
+
+      </form>
+    </div>
+  </main>
+ 
+  </body>
+</html>
