@@ -1,1 +1,0 @@
-console.log("Minha loja está viva!")
