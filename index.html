@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flip Eight</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <!-- =========================================
+       Cabeçalho e menuzinho de navegação
+    ========================================= -->
+    <header class="cabecalho">
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="img/Logo Arcade Retrô Flip EIGHT.png" alt="Flip Eight" class="logo"> 
+            </a>
+        </div>
+
+        <nav class="menu-principal">
+             <button class="btn-hamburguer" aria-label="Abrir Menu" onclick="alternarMenu()">☰</button>
+
+            <ul id="lista-menu">
+                <li><a href="#">CAMISETAS</a></li>
+                <li><a href="#">CANECAS</a></li>
+                <li><a href="#">BONÉS</a></li>
+                <li><a href="#">FIGURES</a></li>
+                <li><a href="#">DECORAÇÕES</a></li>
+            </ul>
+        </nav>
+
+        <div class="barra-pesquisa">
+            <input type="text" placeholder="O que você procura?" aria-label="Campo de busca">
+            <button aria-label="Buscar" class="icone btn-busca">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </div>
+
+        <div class="icones-acao">
+            <button aria-label="Perfil" class="icone">
+                <i class="fa-solid fa-user"></i>
+            </button>
+
+            <button aria-label="Carrinho" class="icone carrinho-btn">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span id="contador" class="badge-carrinho">0</span> <span id="palavra">itens</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- =========================================
+       Banner Principal
+    ========================================= -->
+    <section class="hero">
+        <div class="hero-conteudo">
+            <h1>DO FLIPERAMA PARA A SUA COLEÇÃO.</h1>
+            <P>Camisetas, canecas, figures, decoração e muito mais!</P>
+            <a href="#vitrine-produtos" class="btn-explorar">EXPLORAR LOJA &rarr;</a>
+        </div>
+    </section>
+
+    <p id="aviso" class="aviso"></p>
+
+    <!-- =========================================
+       Vitrines
+    ========================================= -->
+    <main id="vitrine-produtos">
+
+        <section class="vitrine">
+            <article class="produto">
+                <img src="img/camiseta.png" alt="Camiseta Flip Eight">
+                <h3>Camiseta Flip Eight</h3>
+                <p>Algodão, produto de qualidade.</p>
+                <p class="preco">R$ 79,90</p>
+                <button type="button" onclick="adicionarAoCarrinho('Camiseta Dev')">Comprar</button>
+            </article>
+
+            <article class="produto">
+                <img src="img/caneca.png" alt="Caneca Flip Eight">
+                <h3>Caneca Flip Eight 300 ml</h3>
+                <p>Para aquele café revigorante.</p>
+                <p class="preco">R$ 39,90</p>
+                <button type="button" onclick="adicionarAoCarrinho('Caneca 300 ml')">Comprar</button>
+            </article>
+
+            <article class="produto">
+                <img src="img/figure.png" alt="Figure Flip Eight">
+                <h3>Action Figure Flip Eight</h3>
+                <p>Para decorar os seus ambientes.</p>
+                <p class="preco">R$ 99,90</p>
+                <button type="button" onclick="adicionarAoCarrinho('Action Figure Flip Eight')">Comprar</button>
+            </article>
+        </section>
+        
+        <div class="vitrine-estatica">
+            <a href="#" class="cartao">
+                <img src="img/cat cami.png" alt="camisa">
+            </a>
+
+            <a href="#" class="cartao">
+                <img src="img/cat cane.png" alt="caneca">
+            </a>
+
+            <a href="#" class="cartao">
+                <img src="img/cat bone.png" alt="BONÉ">
+            </a>
+
+            <a href="#" class="cartao">
+                <img src="img/cat act.png" alt="Action Figure">
+            </a>
+
+            <a href="#" class="cartao">
+                <img src="img/cat deco.png" alt="decoração">
+            </a>
+        </div>
+        
+        <!-- =========================================
+           Catálogo
+        ========================================= -->
+        <h2>Catálogo</h2>
+        <table>
+            <caption>Produtos disponíveis</caption>
+            <thead>
+                <tr>
+                    <th>Produto</th>
+                    <th>Tamanho</th>
+                    <th>Preço</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Camiseta Flip Eight</td>
+                    <td>M</td>
+                    <td class="preco">R$ 79,90</td>
+                </tr>
+                <tr>
+                    <td>Caneca Flip Eight 300 ml</td>
+                    <td>&mdash;</td>
+                    <td class="preco">R$ 39,90</td>
+                </tr>
+                <tr>
+                    <td>Action Figure Flip Eight</td>
+                    <td>&mdash;</td>
+                    <td class="preco">R$ 99,90</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2">Itens</td>
+                    <td>3</td>
+                </tr>
+            </tfoot>
+        </table>
+        
+        <!-- =========================================
+           Formulário de Cadastro
+        ========================================= -->
+        <section id="cadastro">
+            <h2>Cadastre-se</h2>
+            <form action="" method="post" onsubmit="return validarCadastro()">
+                
+                <fieldset>
+                    <legend>Seus dados</legend>
+                    <label for="nome">Nome completo</label>
+                    <input type="text" id="nome" name="nome" placeholder="Como você quer ser chamado" required minlength="3" maxlength="80" oninput="conferirNome()">
+                    <p id="erro-nome" class="erro"></p>
+
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="voce@exemplo.com" required>
+
+                    <label for="telefone">Telefone</label>
+                    <input type="tel" id="telefone" name="telefone" pattern="[0-9]{2} [0-9]{5}-[0-9]{4}" placeholder="11 99999-9999">
+                </fieldset>
+
+                <fieldset>
+                    <legend>Sua mensagem</legend>
+                    
+                    <label for="assunto">Assunto</label>
+                    <select id="assunto" name="assunto" onchange="mudarDica()">
+                        <option value="duvida">Dúvida sobre um produto</option>
+                        <option value="pedido">Acompanhar um pedido</option>
+                        <option value="troca">Troca ou devolução</option>
+                        <option value="parceria">Parceria</option>
+                    </select>
+                    <p id="dica" class="dica">Diga qual produto.</p>
+
+                    <label for="mensagem">Mensagem</label>
+                    <textarea id="mensagem" name="mensagem" rows="4" placeholder="Escreva aqui o que você precisa..."></textarea>
+                    <p id="erro-mensagem" class="erro"></p>
+
+                    <label>
+                        <input type="checkbox" name="aceite" required> Aceito receber novidades da loja
+                    </label>
+                </fieldset>
+
+                <button type="submit">Enviar cadastro</button>
+                <p id="resultado" class="aviso"></p>
+            </form>
+        </section>
+
+    </main>
+    
+    <!-- =========================================
+       Script
+    ========================================= -->
+    <script src="script.js"></script>
+</body>
+</html>

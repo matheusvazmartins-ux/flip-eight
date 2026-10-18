@@ -1,0 +1,710 @@
+* {
+    box-sizing: border-box;
+}
+
+/* =========================================
+Paletas de Cores
+========================================= */
+
+:root {
+    --cor-fundo: #fdebc4;
+    --cor-escura: #111111;
+    --cor-destaque: #e53935;
+    --cor-destaquehover: #b71c1c;
+    --cor-destaqueshadow: #8b0000;
+    --cor-vitrinehover: #ff5252;
+    --cor-laranja: #fc7202;
+    --cor-vitrinedes: #d4af37;
+}
+
+/* =========================================
+Estilos Gerais da Página
+========================================= */
+
+body {
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
+    background-color: var(--cor-fundo);
+    color: #333333;
+    margin: 0;
+    line-height: 1.5;
+}
+
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 24px;
+}
+
+/* =========================================
+Cabeçalho e menuzinho de navegaç~ao
+========================================= */
+
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: var(--cor-escura);
+    padding: 16px 2%;
+    border-bottom: 2px solid #333;
+    position: relative;
+}
+
+.btn-hamburguer {
+    display: block;
+    background: none;
+    border: none;
+    color: var(--cor-fundo);
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.logo {
+    margin: 0;
+    max-width: 120px;
+}
+
+.logo-container {
+    order: 2;
+    display: flex;
+    justify-content: center;
+}
+
+.menu-principal {
+    order: 1;
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.menu-principal ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--cor-escura);
+    padding: 16px 0;
+    margin: 0;
+    gap: 24px;
+    border-bottom: 2px solid #333;
+    z-index: 10;
+    list-style: none;
+}
+
+.menu-principal ul.ativo {
+    display: flex;
+}
+
+.menu-principal a {
+    display: block;
+    color: var(--cor-fundo);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-align: left;
+    padding-left: 24px;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+.menu-principal a:hover {
+    color: var(--cor-destaque);
+}
+
+.icones-acao {
+    order: 3;
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+}
+
+.icone {
+    background: none;
+    border: none;
+    color: var(--cor-fundo);
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.icone:hover {
+    background-color: transparent;
+    color: var(--cor-destaque);
+}
+
+.badge-carrinho {
+    background-color: var(--cor-destaque);
+    color: var(--cor-fundo);
+    font-size: 1.4rem;
+    padding: 2px 6px;
+    border-radius: 50%;
+    vertical-align: top;
+    margin-left: 4px;
+}
+
+/* =========================================
+Barra de Pesquisa (Mobile)
+========================================= */
+
+.barra-pesquisa {
+    order: 4;
+    flex-basis: 100%;
+    display: flex;
+    background-color: #222222;
+    border-radius: 8px;
+    padding: 2px 16px;
+    margin-top: 16px;
+    align-items: center;
+    border: 1px solid #444444;
+}
+
+.barra-pesquisa input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: #fbedc4;
+    font-family: inherit;
+    font-size: 1rem;
+    outline: none;
+}
+
+.barra-pesquisa input:focus {
+    border: none;
+    outline: none;
+}
+
+.barra-pesquisa input::placeholder {
+    color: #888888;
+}
+
+.btn-busca {
+    color: #fbedc4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* =========================================
+Banner Principal
+========================================= */
+
+.hero {
+    background-image: linear-gradient(rgba(17, 17, 17, 0.8), rgba(17, 17, 17, 0.8)), url('img/ChatGPT\ Image\ 16\ de\ set.\ de\ 2026,\ 17_44_51.png');
+    background-size: cover;
+    background-position: center;
+    padding: 60px 5%;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    border-bottom: 4px solid #d4af37;
+}
+
+.hero-conteudo {
+    max-width: 600px;
+}
+
+.hero-conteudo h1 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.5rem;
+    color: var(--cor-fundo);
+    margin: 0 0 24px 0;
+    line-height: 1.3;
+    text-align: left;
+}
+
+.hero-conteudo p {
+    font-size: 1.2rem;
+    margin-bottom: 32px;
+    color: #cccccc;
+}
+
+.btn-explorar {
+    display: inline-block;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.7rem;
+    letter-spacing: 0.1rem;
+    background-color: var(--cor-destaque);
+    color: white;
+    text-decoration: none;
+    padding: 16px 32px;
+    font-weight: bold;
+    border-radius: 0;
+    box-shadow: 0px 6px 0px var(--cor-destaqueshadow);
+    transition: all 0.1s;
+}
+
+.btn-explorar:hover {
+    background-color: var(--cor-vitrinehover);
+}
+
+/* =========================================
+Vitrines
+========================================= */
+
+.vitrine {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin: 24px 0;
+}
+
+.produto {
+    background-color: var(--cor-escura);
+    border: 4px solid var(--cor-vitrinedes);
+    border-radius: 0;
+    padding: 24px;
+    text-align: center;
+    box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.7);
+    transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+}
+
+.produto:hover {
+    transform: scale(1.05);
+    border-color: var(--cor-destaque);
+    box-shadow: 0 0 20px var(--cor-destaque);
+}
+
+.produto h3 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.85rem;
+    color: var(--cor-vitrinedes);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    line-height: 1.5;
+    min-height: 42px;
+}
+
+.produto p {
+    font-family: 'Poppins', sans-serif;
+    color: var(--cor-fundo);
+    font-size: 0.9rem;
+    margin-bottom: 24px;
+}
+
+.produto .preco {
+    font-family: 'Press Start 2P', cursive;
+    color: #4ade80;
+    font-size: 1.1rem;
+    margin-bottom: 24px;
+    text-shadow: 2px 2px 0px #000000;
+}
+
+.produto button {
+    font-family: 'Press Start 2P', cursive;
+    background-color: var(--cor-destaque);
+    color: #ffffff;
+    letter-spacing: 0.1rem;
+    border: none;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 16px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0px 6px 0px var(--cor-destaqueshadow);
+    transition: all 0.1s;
+    display: block;
+    margin: 0;
+    margin-top: auto;
+}
+
+.produto button:hover {
+    background-color: var(--cor-vitrinehover);
+}
+
+.produto button:active {
+    transform: translateY(6px);
+    box-shadow: 0px 0px 0px var(--cor-destaqueshadow);
+}
+
+.produto img {
+    width: 100%;
+    height: 240px;
+    object-fit: contain;
+    margin-bottom: 24px;
+}
+
+/* =========================================
+Categorias
+========================================= */
+
+.vitrine-estatica {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 16px;
+    margin: 32px 0;
+}
+
+.cartao {
+    position: relative;
+    text-decoration: none;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: var(--cor-fundo);
+    aspect-ratio: 1/1;
+}
+
+.cartao img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    image-rendering: pixelated;
+}
+
+.cartao-conteudo {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 16px 12px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    color: #ffffff;
+}
+
+/* =========================================
+Tipografias, avisos e tabelas
+========================================= */
+
+h1 {
+    color: #fc7202;
+    text-align: center;
+    font-size: 1.75rem;
+
+}
+
+h2 {
+    font-family: 'Press Start 2P', cursive;
+    color: var(--cor-fundo);
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    text-shadow: 3px 3px 0px var(--cor-detalhe);
+    margin-top: 0;
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: var(--cor-escura);
+    color: var(--cor-fundo);
+    border: 4px solid var(--cor-destaque);
+    box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.8);
+}
+
+caption {
+    text-align: left;
+    padding-bottom: 12px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.8rem;
+    color: var(--cor-escura);
+    text-transform: uppercase;
+}
+
+th, td {
+    border: 1px solid #cccccc;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #000000;
+    color: var(--cor-detalhe);
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.7rem;
+    padding: 16px;
+    text-align: left;
+    letter-spacing: 1px;
+    border-bottom: 2px solid var(--cor-destaque);
+}
+
+td {
+    padding: 16px;
+    text-align: left;
+    border-bottom: 1px solid #333333;
+}
+
+.preco {
+    color: #4ade80;
+    font-weight: bold;
+}
+
+.destaque {
+    background-color: #fff3cd;
+    padding: 12px;
+    border-radius: 6px;
+}
+
+.carrinho {
+    text-align: center;
+    font-weight: bold;
+}
+
+#contador {
+    background-color: transparent;
+    color: var(--cor-fundo);
+    padding: 2px 2px;
+    border-radius: 12px;
+}
+
+.aviso {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.7rem;
+    background-color: #e6f4ea;
+    color: #1a7f37;
+    padding: 12px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.aviso:empty, .erro:empty {
+    display: none;
+}
+
+.erro {
+    color: #b42318;
+    font-size: 0.9rem;
+    margin: 6px 0 0;
+}
+
+.dica {
+    color: #555555;
+    font-size: 0.9rem;
+    margin: 6px 0 0;
+}
+
+#resultado {
+    margin-top: 16px;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #1a1a1a;
+}
+
+tbody tr:hover {
+    background-color: var(--cor-destaque);
+    color: #ffffff;
+    transition: background-color 0.2s;
+}
+
+tbody tr:hover .preco {
+    color: #ffffff;
+}
+
+tfoot td {
+    background-color: #000000;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.7rem;
+    color: var(--cor-detalhe);
+}
+
+/* =========================================
+FOormulário de Cadastro
+========================================= */
+
+#cadastro {
+    background-color: var(--cor-escura);
+    border: 4px solid var(--cor-detalhe);
+    border-radius: 0;
+    padding: 32px;
+    margin-top: 48px;
+    box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.7);
+}
+
+fieldset {
+    border: 2px dashed var(--cor-vitrinedes);
+    border-radius: 0;
+    padding: 24px 16px;
+    margin-bottom: 32px;
+}
+
+legend {
+    font-family: 'Press Start 2P', cursive;
+    color: var(--cor-destaque);
+    font-size: 0.8rem;
+    padding: 0 16px;
+    text-transform: uppercase;
+}
+
+label {
+    display: block;
+    margin-top: 16px;
+    font-family: 'Poppins', sans-serif;
+    color: var(--cor-fundo);
+    font-weight: 700;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font-family: inherit;
+}
+
+input[type="checkbox"] {
+    width: auto;
+}
+
+#cadastro input[type="text"],
+#cadastro input[type="email"],
+#cadastro input[type="tel"],
+#cadastro select,
+#cadastro textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    background-color: #000000;
+    color: var(--cor-fundo);
+    font-family: 'Poppins', sans-serif;
+    border: 2px solid #444444;
+    border-radius: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+#cadastro input[type="text"]:focus,
+#cadastro input[type="email"]:focus,
+#cadastro input[type="tel"]:focus,
+#cadastro select:focus,
+#cadastro textarea:focus {
+    border-color: var(--cor-destaque);
+    outline: none;
+    box-shadow: 0 0 10px rgba(229, 57, 53, 0.3);
+}
+
+#cadastro input::placeholder,
+#cadastro textarea::placeholder {
+    color: #666666;
+}
+
+input[type="checkbox"] {
+    width: auto;
+    margin-right: 8px;
+}
+
+#cadastro button[type="submit"] {
+    font-family: 'Press Start 2P', cursive;
+    background-color: var(--cor-destaque);
+    color: #ffffff;
+    border: none;
+    padding: 20px 32px;
+    margin-top: 16px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0px 6px 0px var(--cor-destaqueshadow);
+    transition: all 0.1s;
+    width: 100%;
+}
+
+#cadastro button[type="submit"]:hover {
+    background-color: var(--cor-vitrinehover);
+}
+
+#cadastro button[type="submit"]:active {
+    transform: translateY(6px);
+    box-shadow: 0px 0px 0px var(--cor-destaqueshadow);
+}
+
+/* =========================================
+Responsividade
+========================================= */
+
+@media (min-width: 600px) {
+
+    .vitrine {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    h1 {
+        font-size: 2.25rem;
+    }
+
+
+    }
+
+@media (min-width: 900px) {
+
+    .cabecalho {
+        flex-wrap: nowrap;
+        gap: 48px;
+    }
+
+    .hero {
+        padding: 100px 5%;
+    }
+
+    .hero-conteudo h1 {
+        font-size: 2.5rem;
+    }
+
+    .vitrine {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    h1 {
+        font-size: 2.75rem;
+    }
+
+    .btn-hamburguer {
+        display: none;
+    }
+
+    .menu-principal ul {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        width: auto;
+        padding: 0;
+        border: none;
+        gap: 32px;
+    }
+
+    .menu-principal a {
+        font-size: 0.9rem;
+        padding-left: 0;
+        flex: unset;
+    }
+
+    .logo-container {
+        order: 1;
+    }
+
+    .menu-principal {
+        order: 2;
+    }
+
+    .icones-acao {
+        order: 4;
+        flex: unset;
+    }
+
+    .barra-pesquisa {
+        order: 3;
+        flex-basis: auto;
+        flex: 1;
+        max-width: 350px;
+        margin-top: 0;
+        margin-left: 32px;
+        margin-right: 32px;
+    }
+
+    .vitrine-estatica {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    }
