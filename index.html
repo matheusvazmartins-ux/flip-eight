@@ -19,6 +19,7 @@
     <!-- =========================================
        Cabeçalho e menuzinho de navegação
     ========================================= -->
+    
     <header class="cabecalho">
         <div class="logo-container">
             <a href="index.html">
@@ -46,11 +47,16 @@
         </div>
 
         <div class="icones-acao">
+
+            <button id="btn-tema" aria-label="Alternar Tema" class="icone" onclick="alternarTema()">
+                <i class="fa-solid fa-moon"></i>
+            </button> 
+            
             <button aria-label="Perfil" class="icone">
                 <i class="fa-solid fa-user"></i>
             </button>
 
-            <button aria-label="Carrinho" class="icone carrinho-btn">
+            <button aria-label="Carrinho" class="icone carrinho-btn" onclick="alternarCarrinho()">
                 <i class="fa-solid fa-cart-shopping"></i>
                 <span id="contador" class="badge-carrinho">0</span> <span id="palavra">itens</span>
             </button>
@@ -60,6 +66,7 @@
     <!-- =========================================
        Banner Principal
     ========================================= -->
+   
     <section class="hero">
         <div class="hero-conteudo">
             <h1>DO FLIPERAMA PARA A SUA COLEÇÃO.</h1>
@@ -68,64 +75,55 @@
         </div>
     </section>
 
-    <p id="aviso" class="aviso"></p>
+    <div id="aviso" class="toast"></div>
+
+    <div id ="fundo-carrinho" class="fundo-carrinho" onclick="fecharCarrinho()"></div>
+
+    <aside id="painel-carrinho" class="painel-carrinho" arial-label="Meu carrinho">
+        <div class="carrinho-topo">
+            <button type="button" class="btn-fechar" aria-label="Fechar carrinho" onclick="fecharCarrinho()">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            
+            <h2>Meu carrinho</h2>
+        </div>
+
+        <div class="carrinho-corpo">
+            <ul id="lista-carrinho"></ul>
+        </div>
+
+        <div class="carrinho-rodape">
+            <p class="total-carrinho">Total: <span id="total">R$ 0,00</span></p>
+            <button type="button" onclick="enviarWhatsApp()">Pedir no WhatsApp</button>
+            <button type="button" onclick="limparCarrinho()">Esvaziar Carrinho</button>  
+        </div>
+        
+    </aside>
 
     <!-- =========================================
        Vitrines
     ========================================= -->
+   
     <main id="vitrine-produtos">
 
-        <section class="vitrine">
-            <article class="produto">
-                <img src="img/camiseta.png" alt="Camiseta Flip Eight">
-                <h3>Camiseta Flip Eight</h3>
-                <p>Algodão, produto de qualidade.</p>
-                <p class="preco">R$ 79,90</p>
-                <button type="button" onclick="adicionarAoCarrinho('Camiseta Dev')">Comprar</button>
-            </article>
-
-            <article class="produto">
-                <img src="img/caneca.png" alt="Caneca Flip Eight">
-                <h3>Caneca Flip Eight 300 ml</h3>
-                <p>Para aquele café revigorante.</p>
-                <p class="preco">R$ 39,90</p>
-                <button type="button" onclick="adicionarAoCarrinho('Caneca 300 ml')">Comprar</button>
-            </article>
-
-            <article class="produto">
-                <img src="img/figure.png" alt="Figure Flip Eight">
-                <h3>Action Figure Flip Eight</h3>
-                <p>Para decorar os seus ambientes.</p>
-                <p class="preco">R$ 99,90</p>
-                <button type="button" onclick="adicionarAoCarrinho('Action Figure Flip Eight')">Comprar</button>
-            </article>
-        </section>
-        
-        <div class="vitrine-estatica">
-            <a href="#" class="cartao">
-                <img src="img/cat cami.png" alt="camisa">
-            </a>
-
-            <a href="#" class="cartao">
-                <img src="img/cat cane.png" alt="caneca">
-            </a>
-
-            <a href="#" class="cartao">
-                <img src="img/cat bone.png" alt="BONÉ">
-            </a>
-
-            <a href="#" class="cartao">
-                <img src="img/cat act.png" alt="Action Figure">
-            </a>
-
-            <a href="#" class="cartao">
-                <img src="img/cat deco.png" alt="decoração">
-            </a>
+        <div class="container-filtro">
+            <label for="filtro-categoria">Filtrar Categoria:</label>
+            <select id="filtro-categoria" onchange="mostrarVitrine(this.value)">
+                <option value="todos">Todas as Categorias</option>
+                <option value="camisetas">Camisetas</option>
+                <option value="canecas">Canecas</option>
+                <option value="figures">Figures</option>
+                <option value="bones">Bonés</option>
+                <option value="decoracoes">Decorações</option>
+            </select>
         </div>
+
+        <section class="vitrine" id="vitrine"></section>
         
         <!-- =========================================
            Catálogo
         ========================================= -->
+       
         <h2>Catálogo</h2>
         <table>
             <caption>Produtos disponíveis</caption>
@@ -164,6 +162,7 @@
         <!-- =========================================
            Formulário de Cadastro
         ========================================= -->
+      
         <section id="cadastro">
             <h2>Cadastre-se</h2>
             <form action="" method="post" onsubmit="return validarCadastro()">
@@ -212,6 +211,7 @@
     <!-- =========================================
        Script
     ========================================= -->
+   
     <script src="script.js"></script>
 </body>
 </html>
