@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flip Eight - Produtos</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="icon" type="image/png" href="img/favicon.png" />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- =========================================
+        Cabeçalho e Menu
+        ========================================= -->
+
+    <header class="cabecalho">
+      <div class="logo-container">
+        <a href="index.html">
+          <img src="img/logo.png" alt="Flip Eight" class="logo" />
+        </a>
+      </div>
+
+      <nav class="menu-principal">
+        <button
+          class="btn-hamburguer"
+          aria-label="Abrir Menu"
+          onclick="alternarMenu()"
+        >
+          ☰
+        </button>
+
+        <ul id="lista-menu">
+          <li><a href="index.html">INÍCIO</a></li>
+
+          <li class="dropdown">
+            <a href="produtos.html" class="dropbtn"
+              >PRODUTOS
+              <i
+                class="fa-solid fa-chevron-down"
+                style="font-size: 0.7em; margin-left: 6px"
+              ></i
+            ></a>
+            <ul class="dropdown-conteudo" id="drop-categorias">
+              <li><a href="produtos.html?categoria=camisetas">Camisetas</a></li>
+              <li><a href="produtos.html?categoria=canecas">Canecas</a></li>
+              <li><a href="produtos.html?categoria=bones">Bonés</a></li>
+              <li><a href="produtos.html?categoria=figures">Figures</a></li>
+              <li><a href="produtos.html?categoria=decoracao">Decoração</a></li>
+            </ul>
+          </li>
+
+          <li><a href="cadastro.html">CADASTRO</a></li>
+        </ul>
+      </nav>
+
+      <div class="barra-pesquisa">
+        <input
+          type="text"
+          placeholder="O que você procura?"
+          aria-label="Campo de busca"
+        />
+        <button aria-label="Buscar" class="icone btn-busca">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </div>
+
+      <div class="icones-acao">
+        <button
+          id="btn-tema"
+          aria-label="Alternar Tema"
+          class="icone"
+          onclick="alternarTema()"
+        >
+          <i class="fa-solid fa-moon"></i>
+        </button>
+
+        <button aria-label="Perfil" class="icone">
+          <i class="fa-solid fa-user"></i>
+        </button>
+
+        <button
+          aria-label="Carrinho"
+          class="icone carrinho-btn"
+          onclick="alternarCarrinho()"
+        >
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span id="contador" class="badge-carrinho">0</span>
+          <span id="palavra">itens</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- =========================================
+       Conteúdo Principal - Vitrine e Catálogo
+    ========================================= -->
+
+    <main id="vitrine-produtos">
+      <h2>Nossos Produtos</h2>
+
+      <div class="container-filtro">
+        <label for="filtro-categoria">Filtrar Categoria:</label>
+        <select
+          id="filtro-categoria"
+          onchange="mostrarVitrine(this.value)"
+        ></select>
+      </div>
+
+      <section class="vitrine" id="vitrine"></section>
+
+      <h2>Catálogo</h2>
+      <table>
+        <caption>
+          Produtos disponíveis
+        </caption>
+        <thead>
+          <tr>
+            <th>Produto</th>
+            <th>Categoria</th>
+            <th>Preço</th>
+          </tr>
+        </thead>
+        <tbody id="tabela-corpo"></tbody>
+        <tfoot>
+          <tr>
+            <td colspan="2">Itens</td>
+            <td id="tabela-total">0</td>
+          </tr>
+        </tfoot>
+      </table>
+    </main>
+
+    <!-- =========================================
+       Rodapé
+    ========================================= -->
+
+    <footer class="rodape">
+      <p>&copy; 2026 Flip Eight. Do fliperama para a sua coleção.</p>
+    </footer>
+
+    <!-- =========================================
+       Carrinho
+    ========================================= -->
+
+    <div id="aviso" class="toast"></div>
+    <div
+      id="fundo-carrinho"
+      class="fundo-carrinho"
+      onclick="fecharCarrinho()"
+    ></div>
+
+    <aside
+      id="painel-carrinho"
+      class="painel-carrinho"
+      aria-label="Meu carrinho"
+    >
+      <div class="carrinho-topo">
+        <button
+          type="button"
+          class="btn-fechar"
+          aria-label="Fechar carrinho"
+          onclick="fecharCarrinho()"
+        >
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <h2>Meu carrinho</h2>
+      </div>
+      <div class="carrinho-corpo">
+        <ul id="lista-carrinho"></ul>
+      </div>
+      <div class="carrinho-rodape">
+        <p class="total-carrinho">Total: <span id="total">R$ 0,00</span></p>
+        <button type="button" onclick="enviarWhatsApp()">
+          Pedir no WhatsApp
+        </button>
+        <button type="button" onclick="limparCarrinho()">
+          Esvaziar Carrinho
+        </button>
+      </div>
+    </aside>
+
+    <script src="script.js"></script>
+  </body>
+</html>

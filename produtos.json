@@ -2,20 +2,22 @@
     {
         "id": 1,
         "nome": "Camiseta Flip Eight",
-        "alt": "Camiseta estampada com a logo da Flip Eigth",
+        "alt": "Camiseta estampada com a logo da Flip Eight",
         "descricao": "Algodão, produto de qualidade.",
         "preco": 79.9,
         "imagem": "img/camiseta.png",
-        "categoria": "camisetas"
+        "categoria": "camisetas",
+        "destaque": true
     },
     {
         "id": 2,
         "nome": "Caneca Flip Eight 300 ml",
         "alt": "Caneca de cerâmica com a logo da Flip Eight",
-        "descricao": "Ceramâmica, para aquele café revigorante",
+        "descricao": "Cerâmica, para aquele café revigorante",
         "preco": 39.9,
         "imagem": "img/caneca.png",
-        "categoria": "canecas"
+        "categoria": "canecas",
+        "destaque": true
     },
     {
         "id": 3,
@@ -24,6 +26,37 @@
         "descricao": "Em formato funko, para decorar sua mesa de trabalho",
         "preco": 99.9,
         "imagem": "img/figure.png",
-        "categoria": "figures"
+        "categoria": "figures",
+        "destaque": true
+    },
+    {
+        "id": 4,
+        "nome": "Boné Flip Eight",
+        "alt": "Boné estiloso, preto com detalhes da marca",
+        "descricao": "Estiloso, e te protege do sol",
+        "preco": 49.9,
+        "imagem": "img/bone.png",
+        "categoria": "bones",
+        "destaque": true
+    },
+    {
+        "id": 5,
+        "nome": "Decoração Flip Eight",
+        "alt": "Luminária colorida Flip Eight",
+        "descricao": "Luminária incrível, perfeita para o escuro",
+        "preco": 59.9,
+        "imagem": "img/decoracao.png",
+        "categoria": "decoracao",
+        "destaque": true
+    },
+    {
+        "id": 6,
+        "nome": "Camiseta modelo 2 Flip Eight",
+        "alt": "Camiseta bem estampada, frente e verso",
+        "descricao": "Camiseta bem estampada, frente e verso",
+        "preco": 79.9,
+        "imagem": ["img/camisetaf.png", "img/camisetav.png"],
+        "categoria": "camisetas",
+        "destaque": false
     }
 ]
